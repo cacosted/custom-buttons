@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+:root {
+  --default-color: #E0E0E0;
+  --default-blue: #3D5AFE;
+  --primary-text-color: #3F3F3F;
+  --secondary-text-color: #fff;
+  
+  --disabled-color: #9E9E9E;
+  --disabled-back-color: #E0E0E0;
+  /* Hover & Focus variants */
+  --default-hover: #AEAEAE;
+  --default-hover-blue: #2962FF1A;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  font-size: 62.5%;
+  font-family: 'Noto Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-container {
+  padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ################ Button Component */
+
+.Button-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2.813rem;
 }
 
-.App-link {
-  color: #61dafb;
+.Button-row {
+  display: flex;
+  gap: 6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Button-box {
+  /* border: 1px solid rgba(220, 20, 60, 0.086); */
+  font-size: .8rem;
+}
+
+.Button-title {
+  font-size: .8em;
+}
+
+/* Default */
+.Button-body {
+  border: none;
+  outline: none;
+
+  padding-inline: 1rem;
+  padding-block: .5rem;
+  
+  border-radius: .4rem;
+  font-size: .9rem;
+  font-weight: 500;
+
+  display: flex;
+  gap: .2rem;
+}
+
+.Button-default {
+  background-color: var(--default-color);
+  color:var(--primary-text-color);
+}
+
+.Button-default:hover,
+.Button-default:focus 
+{
+  background-color: var(--default-hover);
+}
+
+/* Outline */
+.Button-outline {
+  background-color: transparent;
+  border: .08rem solid var(--default-blue);
+  color: var(--default-blue);
+}
+
+.Button-outline:hover,
+.Button-outline:focus 
+{
+  background-color: var(--default-hover-blue);
+}
+
+/* Text */
+.Button-text {
+  background-color: transparent;
+  color: var(--default-blue);
+}
+
+.Button-text:hover,
+.Button-text:focus 
+{
+  background-color: var(--default-hover-blue);
+}
+
+.Button-icon {
+  font-size: inherit;
+}
+
+/* ################## Utilities */
+.Button-lg { 
+  padding-inline: 1.375rem;
+  padding-block: .688rem;
+}
+
+.Button-sm { 
+  padding-inline: .75rem;
+  padding-block: .375rem;
+}
+
+.Button-shadow {
+  box-shadow: 0 .12rem .1rem hsla(0, 0%, 20%, 0.2);
+}
+
+.Button-disabled-text {
+  color: var(--disabled-color);
+}
+
+.Button-disabled {
+  border: none;
+  background-color: var(--disabled-back-color);
+  color: var(--disabled-color);
+}
+
+.Button-disabled:hover,
+.Button-disabled:focus
+{
+  background-color: var(--disabled-back-color);
+}
+.Button-disabled-text:hover,
+.Button-disabled-text:focus 
+{
+  background-color: transparent;
 }
